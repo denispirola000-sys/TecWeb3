@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('venda', function (Blueprint $table) {
+        Schema::create('vendas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cliente_id')->constrained();
-            $table->foreingnId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->string('forma_pagamento');
             $table->decimal('valor_total', 10, 2)->nullable();
             $table->timestamps();

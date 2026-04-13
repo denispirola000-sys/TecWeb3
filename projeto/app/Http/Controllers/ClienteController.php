@@ -12,15 +12,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return response()->json(Cliente::all());
     }
 
     /**
@@ -28,7 +20,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Cliente::create($request->all());
     }
 
     /**
@@ -36,7 +28,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        return $cliente;
     }
 
     /**
@@ -52,7 +44,8 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+        $cliente->update($request->all());
+        return $cliente;
     }
 
     /**
@@ -60,6 +53,7 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        $cliente->delete();
+        return response()->json(['ok'=> true]);
     }
 }
