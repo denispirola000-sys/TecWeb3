@@ -14,3 +14,13 @@ Route::resource('itens', ItemVendaController::class);
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cliente', [ClienteController::class, 'index']);
+
+Route::get('/novo', function(){
+    return view('novo');
+});
+
+Route::get('/usuarios', [UserController::class, 'index']);
+
+require __DIR__.'/settings.php';
