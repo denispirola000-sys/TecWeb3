@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\VendaController;
 use App\Http\Controllers\ItemVendaController;
+use App\Http\Controllers\UserController;
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('produtos', ProdutoController::class);
